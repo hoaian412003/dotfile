@@ -31,7 +31,7 @@ map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
 map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
--- bufferk
+-- buffer
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
@@ -155,11 +155,9 @@ map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
 
 -- windows
 map("n", "<leader>ww", "<C-W>p", { desc = "Other window", remap = true })
-map("n", "<leader>wd", "<C-W>c", { desc = "Delete window", remap = true })
-map("n", "<leader>w-", "<C-W>s", { desc = "Split window below", remap = true })
-map("n", "<leader>w|", "<C-W>v", { desc = "Split window right", remap = true })
-map("n", "<leader>-", "<C-W>s", { desc = "Split window below", remap = true })
-map("n", "<leader>|", "<C-W>v", { desc = "Split window right", remap = true })
+map("n", "<C-q>", "<C-W>c", { desc = "Delete window", remap = true })
+map("n", "<C-->", "<C-W>s", { desc = "Split window below", remap = true })
+map("n", "<C-\\>", "<C-W>v", { desc = "Split window right", remap = true })
 
 -- tabs
 map("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
@@ -172,6 +170,14 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 -- Telescope
 map("n", ";", "<cmd>Telescope find_files<cr>", { desc = "Find file" , remap=true})
 map("n", "\'", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" , remap=true})
+map("n", "e", "<cmd>Telescope file_browser<cr>", { desc = "Live grep" , remap=true})
+
 
 -- Lsp
 map("n", "," , "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code action" , remap=true})
+
+-- Find and replace
+map("n", "<C-r>", '<cmd>Spectre<CR>', { remap = true, desc="Open global find and replace" } )
+
+-- Delete word
+map("i", "<C-BS>", "<esc>bce", { remap = true, desc="Delete word" })
