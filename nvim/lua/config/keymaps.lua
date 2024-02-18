@@ -12,10 +12,10 @@ map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true
 map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
 -- Move to window using the <ctrl> hjkl keys
-map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
-map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
-map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
-map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
+map("n", "<C-a>", "<C-w>h", { desc = "Go to left window", remap = true })
+map("n", "<C-s>", "<C-w>j", { desc = "Go to lower window", remap = true })
+map("n", "<C-w>", "<C-w>k", { desc = "Go to upper window", remap = true })
+map("n", "<C-d>", "<C-w>l", { desc = "Go to right window", remap = true })
 
 -- Resize window using <ctrl> arrow keys
 map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
@@ -170,7 +170,7 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 -- Telescope
 map("n", ";", "<cmd>Telescope find_files<cr>", { desc = "Find file" , remap=true})
 map("n", "\'", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" , remap=true})
-map("n", "e", "<cmd>Telescope file_browser<cr>", { desc = "Live grep" , remap=true})
+map("n", "e", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", { desc = "Live grep" , remap=true})
 
 
 -- Lsp
@@ -178,6 +178,3 @@ map("n", "," , "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code action" 
 
 -- Find and replace
 map("n", "<C-r>", '<cmd>Spectre<CR>', { remap = true, desc="Open global find and replace" } )
-
--- Delete word
-map("i", "<C-BS>", "<esc>bce", { remap = true, desc="Delete word" })
