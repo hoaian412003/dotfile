@@ -172,6 +172,8 @@ map("n", ";", "<cmd>Telescope find_files<cr>", { desc = "Find file" , remap=true
 map("n", "\'", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" , remap=true})
 map("n", "e", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", { desc = "Live grep" , remap=true})
 
+-- Lazy Git
+map("n", "<C-g>", "<cmd>LazyGit<CR>", { desc = "Open Git UI" , remap=true})
 
 -- Lsp
 map("n", "," , "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code action" , remap=true})
