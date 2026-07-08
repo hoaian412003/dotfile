@@ -5,7 +5,7 @@ local function claude_sessions()
 
   vim.defer_fn(function()
     vim.api.nvim_chan_send(vim.b.terminal_job_id, "/resume\r")
-  end, 100)
+  end, 500)
 end
 
 return {
@@ -35,7 +35,7 @@ return {
   keys = {
     { toggle_key, "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
     { toggle_key, "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
-    { "'", claude_sessions, mode = "n", desc = "Claude Code sessions" },
+    { "<C-s>", claude_sessions, mode = "n", desc = "Claude Code sessions" },
     -- Diff management
     { "<C-a>", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
     { "<C-d>", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },

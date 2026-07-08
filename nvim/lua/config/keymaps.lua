@@ -8,6 +8,10 @@ map("n", "<C-g>", function()
   Snacks.lazygit({ cwd = LazyVim.root.git() })
 end, { desc = "LazyGit" })
 
+vim.keymap.set("n", "'", function()
+  Snacks.picker.grep()
+end, { desc = "Grep" })
+
 -- Telescope: ; -> Find Files
 map("n", ";", "<cmd>lua Snacks.picker.files()<CR>", {
   desc = "Find Files",
