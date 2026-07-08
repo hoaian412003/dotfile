@@ -1,8 +1,12 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
-
+--
 local map = vim.keymap.set
+
+map("n", "<C-g>", function()
+  Snacks.lazygit({ cwd = LazyVim.root.git() })
+end, { desc = "LazyGit" })
 
 -- Telescope: ; -> Find Files
 map("n", ";", "<cmd>lua Snacks.picker.files()<CR>", {
